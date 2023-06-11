@@ -29,7 +29,7 @@ body {
 
 .top-bar a {
     text-decoration: none;
-    color: rgb(195, 95, 208);
+    color: rgb(217, 103, 251);
 }
 
 .top-bar p {
@@ -65,7 +65,7 @@ body {
 }
 
 .start-page button:hover {
-    background-color: rgb(195, 95, 208);
+    background-color: rgb(217, 103, 251);
 }
 
 .start-page button:active {
@@ -103,7 +103,7 @@ body {
 }
 
 .questions-page button:hover {
-    background-color: rgb(195, 95, 208);
+    background-color: rgb(217, 103, 251);
 }
 
 .questions-page button:active {
@@ -118,11 +118,12 @@ body {
     font-size: 1.2rem;
 }
 
-.results-main-container {
+.results-container {
     margin-top: 3rem;
 }
 
 .results-page h2 {
+    margin-top: 3rem;
     margin-bottom: 1rem;
 }
 
@@ -155,9 +156,46 @@ body {
 }
 
 .final-results button:hover {
-    background-color: rgb(195, 95, 208);
+    background-color: rgb(217, 103, 251);
 }
 
 .final-results button:active {
+    transform: scale(0.92);
+}
+
+/* HIGH SCORES */
+.high-scores-page {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.high-scores-page h2{
+    margin-top: 5rem;
+    margin-bottom: 0.75rem;
+}
+
+.high-scores-page p {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.75rem;
+    background-color: rgb(227, 214, 236);
+}
+
+.high-scores-page button {
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: rgb(65, 13, 116);
+    color: #fff;
+    transition: 0.15s ease-out;
+}
+
+.high-scores-page button:hover {
+    background-color: rgb(217, 103, 251);
+}
+
+.high-scores-page button:active {
     transform: scale(0.92);
 }
