@@ -17,7 +17,7 @@
     </div>
 
     <!-- Start Page -->
-    <div class="start-page">
+    <div class="start-page hide">
         <h1>Coding Quiz Challenge</h1>
         <div class="start-instructions">
             <p>Try to answer the following code-related questions within the time limit.</p>
@@ -26,27 +26,39 @@
         <button>Start Quiz</button>
     </div>
 
-
-
     <!-- Questions Page -->
-    <!-- <div class="body-container">
-
-        <div class="main-container">
-
-            <header class="quiz-intro">
-
-            </header>
-
-            <main>
-
-            </main>
-
+    <div class="questions-page hide">
+        <div id="question">
+            <h1>Commonly used data types do NOT include:</h1>
         </div>
-
-    </div> -->
+        <div class="answers">
+            <button id="answer-one">
+                1. strings
+            </button>
+            <button id="answer-two">
+                2. booleans
+            </button>
+            <button id="answer-three">
+                3. alerts
+            </button>
+            <button id="answer-four">
+                4. numbers
+            </button>
+        </div>
+    </div>
 
     <!-- Results Page  -->
-
+    <div class="results-page hide">
+        <div class="results-main-container">
+            <h2>All done!</h2>
+            <p>Your final score is 22.</p>
+            <div class="final-results">
+                <label for="final-score">Enter initials: </label>
+                <input type="text" id="final-score">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Submit High Scores Page -->
 
