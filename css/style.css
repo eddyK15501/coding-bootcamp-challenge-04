@@ -1,0 +1,73 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* UNIVERSAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* HIDE PAGE */
+.hide {
+    display: none;
+}
+
+/* TOP-BAR */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+}
+
+.top-bar a {
+    text-decoration: none;
+    color: rgb(195, 95, 208);
+}
+
+.top-bar p {
+    font-size: 1rem;
+}
+
+/* START PAGE */
+.start-page {
+    text-align: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.start-page h1 {
+    margin-bottom: 1.5rem;
+}
+
+.start-instructions p:nth-child(2) {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.start-page button {
+    cursor: pointer;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    background-color: rgb(65, 13, 116);
+    color: #fff;
+    transition: 0.15s ease-out;
+}
+
+.start-page button:hover {
+    background-color: rgb(195, 95, 208);
+}
+
+.start-page button:active {
+    transform: scale(0.92);
+}
