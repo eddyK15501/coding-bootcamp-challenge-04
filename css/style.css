@@ -83,7 +83,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.questions-page .answers {
+.questions-page #answers {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -91,7 +91,7 @@ body {
 
 .questions-page button {
     cursor: pointer;
-    width: 150px;
+    width: 200px;
     text-align: start;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -108,6 +108,17 @@ body {
 
 .questions-page button:active {
     transform: scale(0.92);
+}
+
+.answer-bar {
+    margin-top: 2.5rem;
+    font-size: 1.8rem;
+    color: rgb(186, 186, 186);
+}
+
+.answer-bar hr {
+    border: 1px solid rgb(186, 186, 186);
+    margin-bottom: 1rem;
 }
 
 /* RESULTS PAGE  */

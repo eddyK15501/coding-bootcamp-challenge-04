@@ -13,26 +13,26 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <a href="">View high scores</a>
-        <p>Time: 0</p>
+        <p id="timer">Time: 0</p>
     </div>
 
     <!-- Start Page -->
-    <div class="start-page hide">
+    <div class="start-page">
         <h1>Coding Quiz Challenge</h1>
         <div class="start-instructions">
             <p>Try to answer the following code-related questions within the time limit.</p>
             <p>Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
         </div>
-        <button>Start Quiz</button>
+        <button id="start-button">Start Quiz</button>
     </div>
 
     <!-- Questions Page -->
     <div class="questions-page hide">
         <div id="question">
-            <h1>Commonly used data types do NOT include:</h1>
+            <!-- <h1>Commonly used data types do NOT include:</h1> -->
         </div>
-        <div class="answers">
-            <button id="answer-one">
+        <div id="answers">
+            <!-- <button id="answer-one">
                 1. strings
             </button>
             <button id="answer-two">
@@ -43,12 +43,18 @@
             </button>
             <button id="answer-four">
                 4. numbers
-            </button>
+            </button> -->
+        </div>
+        <div class="answer-bar hide">
+            <hr>
+            <p id="correct-or-wrong">
+                Correct!
+            </p>
         </div>
     </div>
 
     <!-- Results Page  -->
-    <div class="main-results-container hide">
+    <div class="main-results-page hide">
         <div class="results-page">
             <div class="results-container">
                 <h2>All done!</h2>
@@ -63,7 +69,7 @@
     </div>
 
     <!-- High Scores Page -->
-    <div class="high-scores-page">
+    <div class="high-scores-page hide">
         <h2>High scores</h2>
         <div class="high-scores">
             <p>1. AB - 22</p>
@@ -72,6 +78,7 @@
         <button>Clear high scores</button>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./js/questions.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
