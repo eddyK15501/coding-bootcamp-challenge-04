@@ -6,11 +6,16 @@ const answerBar = document.querySelector('.answer-bar')
 const correctOrWrong = document.getElementById('correct-or-wrong')
 const resultsPage = document.querySelector('.main-results-page')
 const fScore = document.getElementById('final-score')
+const hsInitials = document.getElementById('fs')
+const submitBtn = document.getElementById('submit-hs')
+const highScoresPage = document.querySelector('.high-scores-page')
 
 let finalScore = 0
 let gameOver = false
 let questionIndex = 0
 let totalTime = 75
+let gimmeInitials = ''
+let highScoresArray = []
 
 // start timer
 const startTimeCount = () => {
@@ -114,8 +119,41 @@ const showScore = () => {
     fScore.innerText = `${finalScore}.`
 }
 
+const createHighScore = () => {
+    gimmeInitials = hsInitials.value
+
+    if (!gimmeInitials) {
+        alert("Please enter initials")
+        return
+    }
+
+    let hs = {
+        gimmeInitials,
+        finalScore
+    } 
+
+    console.log(hs)
+    
+   
+   
+   
+   
+   
+   
+    resultsPage.classList.add('hide')
+    highScoresPage.classList.remove('hide')
+    
+}
 
 
-// ADD EVENT LISTENERS
+
+
+
+// add event listeners
 startButton.addEventListener('click', startQuiz)
 
+// hsInitials.addEventListener('keydown', (e) => {
+//     console.log(e.target.value)
+// })
+
+submitBtn.addEventListener('click', createHighScore)
