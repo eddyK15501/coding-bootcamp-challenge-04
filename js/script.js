@@ -12,21 +12,22 @@ let gameOver = false
 let questionIndex = 0
 let totalTime = 75
 
-// START TIMER
+// start timer
 const startTimeCount = () => {
 
     let timer = setInterval(() => {
+        // if the game is not over
         if (!gameOver) {
             totalTime--
             finalScore = totalTime
             timerLeft.innerText = `Time: ${totalTime}`
         }
-
+        // if the game is over
         if (gameOver) {
             clearInterval(timer)
             showScore()
         }
-        
+        // if the timer goes to zero
         if (totalTime < 0) {
             clearInterval(timer)
             showScore()
@@ -36,7 +37,7 @@ const startTimeCount = () => {
     }, 1000)
 }
 
-// START THE QUIZ
+// start the quiz
 const startQuiz = () => {
     startPage.classList.add('hide')
     questionsPage.classList.remove('hide')
@@ -45,11 +46,12 @@ const startQuiz = () => {
     startTimeCount()
 }
 
-// SHOW THE QUESTIONS PAGE
+// show the questions page
 const showQuestion = (index) => {
     const question = document.getElementById('question')
     const answers = document.getElementById('answers')
     
+    // if there are still questions left that are able to be displayed
     if (questionIndex <= triviaQuestions.length - 1) {
         question.innerHTML = `<h1>${triviaQuestions[index].question}</h1>`
     
@@ -77,14 +79,16 @@ const showQuestion = (index) => {
     } 
 }
 
-// CHECK IF ANSWER IS CORRECT OR NOT
+// check if answer is correct or wrong
 const checkAnswer = (event) => {
     
     const answerClicked = event.target.innerText
 
+    // if the answer is correct
     if (answerClicked === triviaQuestions[questionIndex].answer) {
         correctOrWrong.innerText = 'Correct!'
         answerBar.classList.remove('hide')
+    // if the answer is wrong
     } else if (answerClicked !== triviaQuestions[questionIndex].answer) {
         totalTime -= 10
         correctOrWrong.innerText = 'Wrong!'
@@ -94,6 +98,7 @@ const checkAnswer = (event) => {
         showScore()
     }
     
+    // display correct or wrong for 500 milliseconds after answering
     setTimeout(() => {
         answerBar.classList.add('hide')
         questionIndex++
@@ -101,13 +106,12 @@ const checkAnswer = (event) => {
     }, 500)
 }
 
-// SHOW SCORES PAGE
+// show scores page
 const showScore = () => {
     gameOver = true
     questionsPage.classList.add('hide')
     resultsPage.classList.remove('hide')
     fScore.innerText = `${finalScore}.`
-    console.log(finalScore)
 }
 
 
