@@ -198,7 +198,7 @@ const displayHighScores = () => {
 
 // clear the high scores page
 const clearScore = () => {
-    highScoresArray = [];
+    highScoresArray = []
     index = 1
 
     // removes the high scores after clearing the local storage
@@ -206,7 +206,7 @@ const clearScore = () => {
         highScoresList.removeChild(highScoresList.firstChild)
      }
 
-    localStorage.clear('HighScore');
+    localStorage.clear('HighScore')
 } 
 
 // set variables back to what they were, when clicking on the go back button
