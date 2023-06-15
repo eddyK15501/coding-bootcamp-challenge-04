@@ -26,20 +26,20 @@ Optional: Download Live Server from the Visual Studio Code Extensions tab
 
 ## Usage
 
-### Screenshots of the project that was being asked to be built
+#### Screenshots of the project that was being asked to be built
 
-#### Start the quiz
+### Start the quiz
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.19.45%20PM.png)
 
-#### Answer trivia questions
+### Answer trivia questions
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.19.47%20PM.png)
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.19.49%20PM.png)
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.19.52%20PM.png)
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.19.56%20PM.png)
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.20.00%20PM.png)
 
-#### Submit a final score
+### Submit a final score
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.20.08%20PM.png)
 
-#### Check the high scores
+### Check the high scores
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.20.09%20PM.png)
