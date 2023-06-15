@@ -136,6 +136,7 @@ const createHighScore = () => {
         return
     }
 
+    // clear the input field
     hsInitials.value = ""
 
     let hs = {
@@ -143,6 +144,7 @@ const createHighScore = () => {
         finalScore
     }
 
+    // push to high scores array
     highScoresArray.push(hs)
 
     //  prevents displaying high score of the first child twice
@@ -150,6 +152,7 @@ const createHighScore = () => {
         highScoresList.removeChild(highScoresList.firstChild)
      }
 
+    // adds high score to the HTML with a for loop
     for (let i = 0; i < highScoresArray.length; i++) {
         let highScoreLi = document.createElement('li')
         highScoreLi.innerText = `${index}. ${highScoresArray[i].gimmeInitials} - ${highScoresArray[i].finalScore}`
@@ -170,10 +173,12 @@ const saveHighScore = () => {
 const getHighScore = () => {
     let loadHighScores = JSON.parse(localStorage.getItem('HighScore'))
 
+    // if localStorage.getItem is false, stop action
     if (!loadHighScores) {
         return false
     }
 
+    // retrieve high scores from local storage for display, and push back into high scores array for initial rendering
     for (let i = 0; i < loadHighScores.length; i++) {
         let highScoreLi = document.createElement('li')
         highScoreLi.innerText = `${index}. ${loadHighScores[i].gimmeInitials} - ${loadHighScores[i].finalScore}`
@@ -200,6 +205,7 @@ const clearScore = () => {
     highScoresArray = [];
     index = 1
 
+    // removes the high scores after clearing the local storage
     while (highScoresList.firstChild) {
         highScoresList.removeChild(highScoresList.firstChild)
      }
