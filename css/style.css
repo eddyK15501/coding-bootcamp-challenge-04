@@ -27,8 +27,8 @@ body {
     padding: 1rem 1.2rem;
 }
 
-.top-bar a {
-    text-decoration: none;
+.top-bar #hs-link {
+    cursor: pointer;
     color: rgb(217, 103, 251);
 }
 

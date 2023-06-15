@@ -12,7 +12,7 @@ const highScoresPage = document.querySelector('.high-scores-page')
 const highScoresList = document.querySelector('.high-scores-list')
 const goBack = document.getElementById('go-back')
 const clearHs = document.getElementById('clear')
-const goToHsPage = document.querySelector('a')
+const goToHsPage = document.getElementById('hs-link')
 
 let finalScore = 0
 let gameOver = false
@@ -20,6 +20,7 @@ let questionIndex = 0
 let totalTime = 75
 let gimmeInitials = ''
 let highScoresArray = []
+let index = 1
 
 // start timer
 const startTimeCount = () => {
@@ -124,56 +125,48 @@ const showScore = () => {
     fScore.innerText = `${finalScore}.`
 }
 
+// create high score with initials and a final score
 const createHighScore = () => {
     gimmeInitials = hsInitials.value
 
+    // if input box is empty
     if (!gimmeInitials) {
         alert("Please enter initials")
         return
     }
 
+    hsInitials.value = ""
+
     let hs = {
         gimmeInitials,
         finalScore
     }
-    
+
     highScoresArray.push(hs)
-    
+
+    //  prevents displaying high score of the first child twice
+    while (highScoresList.firstChild) {
+        highScoresList.removeChild(highScoresList.firstChild)
+     }
+
+    for (let i = 0; i < highScoresArray.length; i++) {
+        let highScoreLi = document.createElement('li')
+        highScoreLi.innerText = `${index}. ${highScoresArray[i].gimmeInitials} - ${highScoresArray[i].finalScore}`
+        highScoresList.appendChild(highScoreLi)
+        index++
+    }
+
     saveHighScore()
     displayHighScores()
 
-    // let loadHighScores = JSON.parse(localStorage.getItem('HighScore'))
-
-    // let lastHighScore = loadHighScores.slice(-1)
-   
-    // let highScoreLi = document.createElement('li')
-    //     highScoreLi.innerText = `${highScoresArray.length}. ${lastHighScore[0].gimmeInitials} - ${lastHighScore[0].finalScore}`
-    //     highScoresList.appendChild(highScoreLi)
-
-
-
-    resultsPage.classList.add('hide')
-    highScoresPage.classList.remove('hide')
-
 }
 
+// save the high score to local storage
 const saveHighScore = () => {
     localStorage.setItem('HighScore', JSON.stringify(highScoresArray))
 }
 
-const displayHighScores = (e) => {
-    e.preventDefault()  
-
-    gameOver = true
-   
-    resultsPage.classList.add('hide')
-    startPage.classList.add('hide')
-    questionsPage.classList.add('hide')
-   
-    highScoresPage.classList.remove('hide')
-    timerLeft.innerText = `Time: 0`
-}
-
+// get the high scores loaded from local storage
 const getHighScore = () => {
     let loadHighScores = JSON.parse(localStorage.getItem('HighScore'))
 
@@ -181,44 +174,60 @@ const getHighScore = () => {
         return false
     }
 
-    let lastHighScore = loadHighScores.slice(-1)
-   
-    let highScoreLi = document.createElement('li')
-        highScoreLi.innerText = `${loadHighScores.length}. ${lastHighScore[0].gimmeInitials} - ${lastHighScore[0].finalScore}`
+    for (let i = 0; i < loadHighScores.length; i++) {
+        let highScoreLi = document.createElement('li')
+        highScoreLi.innerText = `${index}. ${loadHighScores[i].gimmeInitials} - ${loadHighScores[i].finalScore}`
         highScoresList.appendChild(highScoreLi)
 
-    // highScoresArray.push(lastHighScore)
-
-    // loadHighScores.forEach((hs, index) => {
-    //     let highScoreLi = document.createElement('li')
-    //     highScoreLi.innerText = `${index + 1}. ${hs.gimmeInitials} - ${hs.finalScore}`
-    //     highScoresList.appendChild(highScoreLi)
-
-    //     highScoresArray.push(hs)
-    // })
-
-
+        highScoresArray.push(loadHighScores[i])
+    }
 }
 
+// display the high scores page
+const displayHighScores = () => {
+    gameOver = true
+
+    resultsPage.classList.add('hide')
+    startPage.classList.add('hide')
+    questionsPage.classList.add('hide')
+
+    highScoresPage.classList.remove('hide')
+    timerLeft.innerText = `Time: 0`
+}
+
+// clear the high scores page
+const clearScore = () => {
+    highScoresArray = [];
+    index = 1
+
+    while (highScoresList.firstChild) {
+        highScoresList.removeChild(highScoresList.firstChild)
+     }
+
+    localStorage.clear('HighScore');
+} 
+
+// set variables back to what they were, when clicking on the go back button
 const goBackToStart = () => {
-    
     gameOver = false
     questionIndex = 0
     totalTime = 75
     finalScore = 0
     gimmeInitials = ''
+    index = 1
 
     renderStartPage()
 }
 
+// render the the start page after clicking go back
 const renderStartPage = () => {
     highScoresPage.classList.add('hide')
     startPage.classList.remove('hide')
     timerLeft.innerText = `Time: 0`
 }
 
+// get the local storage array to render from the start
 getHighScore()
-
 
 
 // add event listeners
@@ -229,3 +238,5 @@ submitBtn.addEventListener('click', createHighScore)
 goBack.addEventListener('click', goBackToStart)
 
 goToHsPage.addEventListener('click', displayHighScores)
+
+clearHs.addEventListener('click', clearScore)
