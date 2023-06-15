@@ -37,7 +37,6 @@ const startTimeCount = () => {
         if (gameOver) {
             clearInterval(timer)
         }
-
         // if the timer goes to zero
         if (totalTime < 0) {
             clearInterval(timer)
@@ -93,7 +92,6 @@ const showQuestion = (index) => {
 
 // check if answer is correct or wrong
 const checkAnswer = (event) => {
-
     const answerClicked = event.target.innerText
 
     // if the answer is correct
@@ -135,7 +133,6 @@ const createHighScore = () => {
         alert("Please enter initials")
         return
     }
-
     // clear the input field
     hsInitials.value = ""
 
@@ -143,14 +140,13 @@ const createHighScore = () => {
         gimmeInitials,
         finalScore
     }
-
     // push to high scores array
     highScoresArray.push(hs)
 
     //  prevents displaying high score of the first child twice
     while (highScoresList.firstChild) {
         highScoresList.removeChild(highScoresList.firstChild)
-     }
+    }
 
     // adds high score to the HTML with a for loop
     for (let i = 0; i < highScoresArray.length; i++) {
