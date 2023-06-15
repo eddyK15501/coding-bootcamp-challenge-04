@@ -1,3 +1,4 @@
+// getElementById and querySelectors
 const startButton = document.getElementById('start-button')
 const startPage = document.querySelector('.start-page')
 const questionsPage = document.querySelector('.questions-page')
@@ -14,6 +15,7 @@ const goBack = document.getElementById('go-back')
 const clearHs = document.getElementById('clear')
 const goToHsPage = document.getElementById('hs-link')
 
+// global variables
 let finalScore = 0
 let gameOver = false
 let questionIndex = 0
