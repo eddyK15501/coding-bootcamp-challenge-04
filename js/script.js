@@ -24,7 +24,6 @@ let index = 1
 
 // start timer
 const startTimeCount = () => {
-
     let timer = setInterval(() => {
         // if the game is not over
         if (!gameOver) {
@@ -158,7 +157,6 @@ const createHighScore = () => {
 
     saveHighScore()
     displayHighScores()
-
 }
 
 // save the high score to local storage
