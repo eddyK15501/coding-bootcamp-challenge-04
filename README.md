@@ -45,7 +45,7 @@ Optional: Download Live Server from the Visual Studio Code Extensions tab
 ![alt text](./assets/image/Screenshot%202023-06-10%20at%2010.20.09%20PM.png)
 
 ## Credits
-My wonderful classmates at the UNC coding bootcamp
+To my wonderful classmates at the UNC coding bootcamp
 
 ## License
 MIT License
