@@ -67,7 +67,7 @@ const showQuestion = (index) => {
         question.innerHTML = `<h1>${triviaQuestions[index].question}</h1>`
 
         answers.innerHTML =
-            `<button class="btn">
+        `<button class="btn">
         ${triviaQuestions[index].options[0]}
         </button>
         <button class="btn">
