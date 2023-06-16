@@ -194,7 +194,7 @@ const displayHighScores = () => {
     questionsPage.classList.add('hide')
 
     highScoresPage.classList.remove('hide')
-    topBar.classList.add('hide')
+    topBar.style.visibility = 'hidden'
     timerLeft.innerText = `Time: 0`
 }
 
@@ -227,7 +227,7 @@ const goBackToStart = () => {
 const renderStartPage = () => {
     highScoresPage.classList.add('hide')
     startPage.classList.remove('hide')
-    topBar.classList.remove('hide')
+    topBar.style.visibility = 'visible'
     timerLeft.innerText = `Time: 0`
 }
 
