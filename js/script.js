@@ -14,6 +14,7 @@ const highScoresList = document.querySelector('.high-scores-list')
 const goBack = document.getElementById('go-back')
 const clearHs = document.getElementById('clear')
 const goToHsPage = document.getElementById('hs-link')
+const topBar = document.getElementById('top-bar-container')
 
 // global variables
 let finalScore = 0
@@ -193,6 +194,7 @@ const displayHighScores = () => {
     questionsPage.classList.add('hide')
 
     highScoresPage.classList.remove('hide')
+    topBar.classList.add('hide')
     timerLeft.innerText = `Time: 0`
 }
 
@@ -225,6 +227,7 @@ const goBackToStart = () => {
 const renderStartPage = () => {
     highScoresPage.classList.add('hide')
     startPage.classList.remove('hide')
+    topBar.classList.remove('hide')
     timerLeft.innerText = `Time: 0`
 }
 
