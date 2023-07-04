@@ -170,7 +170,7 @@ const saveHighScore = () => {
 const getHighScore = () => {
     let loadHighScores = JSON.parse(localStorage.getItem('HighScore'))
 
-    // if localStorage.getItem is false, stop action
+    // if not localStorage.getItem, return false
     if (!loadHighScores) {
         return false
     }
