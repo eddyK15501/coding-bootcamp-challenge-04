@@ -4,7 +4,7 @@
 In this weeks project, we were asked to create a timed trivia quiz from scratch using HTML, CSS, and vanilla JavaScript. You begin by clicking the "Start Quiz" button. A timer, located on the upper right corner of the screen, will begin counting down, indicating the number of seconds left to complete the quiz. Trivia questions relating to JavaScript will be queued. If the question is answered correctly, the timer will continue to countdown as expected. If the question is answered incorrectly, the timer will decrease by an additional ten seconds. When the quiz is completed, you will be prompted to enter an initial to go along with your final score. The final score equates to the number of seconds left on the timer when the quiz was completed. Submit your initials, and you will be taken to a high score results page. There, you will see a list of high scores to go along with initials.
 
 ### Link to the deployed application
-https://eddyk15501.github.io/coding-bootcamp-challenge-04/
+https://eddyk15501.github.io/timed-trivia-quiz/
 
 ### User Story
 AS A coding boot camp student
